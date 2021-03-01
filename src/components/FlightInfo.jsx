@@ -15,17 +15,17 @@ const FlightInfo = ({ data }) => {
     return (
         <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">
-                <p>{origin} - {destination}</p>
+                <p className="muted">{origin} - {destination}</p>
                 <p>
                     {`${departureTime.getHours()}:${departureTime.getMinutes()}`} - {`${arrivalTime.getHours()}:${arrivalTime.getMinutes()}`}
                 </p>
             </div>
             <div className="d-flex flex-column">
-                <p>Czas lotu</p>
+                <p className="muted">Czas lotu</p>
                 <p>{durationInfo}</p>
             </div>
             <div className="d-flex flex-column">
-                <p>{`${amoutStops} przesiadek`} </p>
+                <p className="muted">{`${amoutStops} przesiadek`} </p>
                 <p>{witchStops}</p>
             </div>
         </div>
