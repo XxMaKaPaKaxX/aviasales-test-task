@@ -8,7 +8,7 @@ const Tickets = ({ ticketsPack, amountShowedTickets }) => {
 
 
     return (
-        <div>
+        <div className="tickets">
             {tickets}
         </div>
     );

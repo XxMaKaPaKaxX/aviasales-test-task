@@ -1,1 +1,35 @@
 @import '~mdb-ui-kit/css/mdb.min.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f7fa;
+}
+
+.transfers-panel .input-control {
+    transition: .2s;
+
+    &:hover {
+        background-color: #F1FCFF;
+    }
+}
+
+
+
+.ticket-price {
+    color: #2196F3;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.muted {
+    color: #A0B0B9;
+}
+
+.ticket-info {
+    width: 85%;
+}
