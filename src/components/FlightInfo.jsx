@@ -9,7 +9,6 @@ const FlightInfo = ({ data }) => {
 
     const amoutStops = [...stops].length;
     const witchStops = [...stops].join(', ');
-    console.log(witchStops)
 
 
     return (

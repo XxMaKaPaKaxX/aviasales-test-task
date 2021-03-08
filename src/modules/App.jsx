@@ -10,13 +10,13 @@ const App = () => {
 
   const [searchId, setSearchId] = useState();
   const [ticketsPack, setTicketsPack] = useState([]);
-  const [amountShowedTickets, setAmountShowedTickets] = useState(3);
+  const [amountShowedTickets, setAmountShowedTickets] = useState(5);
   const [filterCheaperOrFaster, setFilterCheaperOrFaster] = useState('cheapest');
 
   const [transfersCheckboxesStatus, setTransfersCheckboxesStatus] = useState({
-    all: true,
+    all: false,
     without: false,
-    one: false,
+    one: true,
     two: false,
     three: false
   })
@@ -29,14 +29,13 @@ const App = () => {
   }, []);
 
   const ticketsSearching = () => {
-    console.log(`${apiUrl}/tickets?searchId=${searchId}`)
     if (searchId === undefined) {
       return;
     }
     fetch(`${apiUrl}/tickets?searchId=${searchId}`)
       .then(resp => resp.json())
       .then(resp => {
-        console.log(resp.stop)
+        /* console.log(resp.stop) */
         if (resp.stop === false) {
           return ticketsSearching()
         } else {
@@ -73,7 +72,7 @@ const App = () => {
           </div>
 
           <div className="right-panel col-md-8">
-            <div class="btn-group w-100 mb-4" role="group">
+            <div className="btn-group w-100 mb-4" role="group">
               <FilterBtn
                 id="cheapest"
                 text="Najtańsze"
@@ -90,6 +89,8 @@ const App = () => {
             <Tickets
               ticketsPack={ticketsPack}
               amountShowedTickets={amountShowedTickets}
+              filterCheaperOrFaster={filterCheaperOrFaster}
+              transfersCheckboxesStatus={transfersCheckboxesStatus}
             />
           </div>
 

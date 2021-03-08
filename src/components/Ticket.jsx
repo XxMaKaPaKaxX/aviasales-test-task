@@ -6,7 +6,7 @@ const Ticket = ({ data }) => {
 
 
     const { price, carrier, segments } = data;
-    console.log(price, carrier, segments)
+    /* console.log(price, carrier, segments) */
     const [destination, homecoming] = segments
 
     const commonCarrierLogoUrl = 'https://pics.avs.io/99/36';
